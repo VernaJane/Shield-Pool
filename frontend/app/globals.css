@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* Gradient backgrounds */
+  .gradient-red-yellow {
+    background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+  }
+
+  .gradient-dark-red {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+  }
+
+  .gradient-dark-yellow {
+    background: linear-gradient(135deg, #a16207 0%, #eab308 100%);
+  }
+
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-gradient-to-br from-red-600 to-yellow-500 text-black font-semibold border-0 rounded-lg px-6 py-3 transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    @apply -translate-y-0.5 shadow-lg shadow-red-600/30;
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-50 translate-y-0 shadow-none cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-white border-2 border-red-600 font-semibold rounded-lg px-6 py-3 transition-all duration-300;
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    @apply bg-red-600 text-black -translate-y-0.5;
+  }
+
+  /* Custom card styles */
+  .card {
+    @apply bg-gray-900 border border-red-600 rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-yellow-500 shadow-lg shadow-red-600/15;
+  }
+
+  .card-header {
+    @apply bg-gradient-to-br from-red-600 to-yellow-500 text-black px-6 py-4 -mx-6 -mt-6 mb-6 rounded-t-xl font-bold text-xl;
+  }
+
+  /* Input styles */
+  .input-field {
+    @apply bg-gray-800 border-2 border-gray-700 text-white rounded-lg px-4 py-3 transition-all duration-300;
+  }
+
+  .input-field:focus {
+    @apply outline-none border-yellow-500 ring-2 ring-yellow-500/20;
+  }
+
+  /* Status indicators */
+  .status-success {
+    @apply text-yellow-500 font-semibold;
+  }
+
+  .status-error {
+    @apply text-red-500 font-semibold;
+  }
+
+  .status-pending {
+    @apply text-gray-400 font-semibold;
+  }
+}
+
+
